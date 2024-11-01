@@ -25,24 +25,8 @@ namespace Hooks
 
         inline static REL::Relocation<decltype(Thunk)> func;
 
-        inline static const REL::RelocationID Actor_DealDamage{ 37673, 38627 };
+        inline static const REL::RelocationID Hook{ 37673, 38627 };
 
-        inline static const auto address{ Actor_DealDamage.address() };
+        inline static const auto address{ Hook.address() };
     };
-
-    //class Hook_OnMeleeHit
-    //{
-    //public:
-    //    static void install()
-    //    {
-    //        REL::Relocation<uintptr_t> hook{ RELOCATION_ID(37673, 38627) }; // 140628C20       14064E760
-    //        auto&                      trampoline = SKSE::GetTrampoline();
-    //        _ProcessHit                           = trampoline.write_call<5>(hook.address() + REL::VariantOffset(0x3C0, 0x4A8, 0).offset(), processHit);
-    //        logger::info("hook:OnMeleeHit");
-    //    }
-
-    //private:
-    //    static void                                         processHit(RE::Actor* victim, RE::HitData& hitData);
-    //    inline static REL::Relocation<decltype(processHit)> _ProcessHit; // 140626400       14064BAB0
-    //};
 } // namespace Hooks

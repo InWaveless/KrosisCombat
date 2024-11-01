@@ -21,17 +21,4 @@ namespace Hooks
         logger::info("target:{}, hitData:{}", target->GetName(), hitData.weapon->GetName());
         MeleeHit::func(target, hitData);
     }
-
-    // void Hook_OnMeleeHit::processHit(RE::Actor* victim, RE::HitData& hitData)
-    //{
-    //    using HITFLAG  = RE::HitData::Flag;
-    //    auto aggressor = hitData.aggressor.get().get();
-    //    if (!victim || !aggressor || victim->IsDead()) {
-    //        _ProcessHit(victim, hitData);
-    //        return;
-    //    }
-    //    logger::info("on melee hit hook");
-    //    //hitProcessor::GetSingleton()->processHit(aggressor, victim, hitData);
-    //    _ProcessHit(victim, hitData);
-    //}
 } // namespace Hooks
