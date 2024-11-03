@@ -7,16 +7,11 @@ namespace Hooks
 {
     void Install() noexcept
     {
-        //stl::write_thunk_call<MainUpdate>();
-        //logger::info("Installed main update hook");
-        //logger::info("");
-
-        stl::write_thunk_call<MeleeHit>();
+        REL::Relocation target{ RELOCATION_ID(37673, 38627), REL::Relocate(0x3c0, 0x4a8, 0x0) };
+        stl::write_thunk_call<MeleeHit>(target.address());
         logger::info("installed on melee hit hook");
         logger::info("");
     }
-
-    i32 MainUpdate::Thunk() noexcept { return func(); }
 
     void MeleeHit::Thunk(RE::Actor* target, RE::HitData& hitData)
     {

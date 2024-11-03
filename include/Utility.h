@@ -1,11 +1,11 @@
 #pragma once
 
-class Utility : public Singleton<Utility>
+class Utility
 {
 public:
     class Actor : public Singleton<Actor>
     {
     public:
-        static void RestoreAv(RE::Actor* actor, RE::ActorValue actorValue, float value);
+        void RestoreAv(RE::Actor* actor, RE::ActorValue actorValue, float value);
     };
 };
