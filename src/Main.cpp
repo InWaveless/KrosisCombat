@@ -7,7 +7,7 @@ void Listener(SKSE::MessagingInterface::Message* message) noexcept
 {
     if (message->type == SKSE::MessagingInterface::kDataLoaded) {
         Settings::LoadSettings();
-        // Events::EquipEventHandler::Register();
+
         Hooks::Install();
         logger::info("krosis combat init complete");
     }
@@ -32,7 +32,7 @@ SKSEPluginLoad(const SKSE::LoadInterface* skse)
     // and the number of 6 byte write_call/write_branch, say q. Then, the size of the trampoline is given
     // by (p * 14) + (q * 8). E.g.: If you have two 5 byte write_calls and one 6 byte write_branch, the size
     // of the trampoline should be (2 * 14) + (1 * 8) = 34.
-    SKSE::AllocTrampoline(68);
+    SKSE::AllocTrampoline(14);
 
     if (const auto messaging{ SKSE::GetMessagingInterface() }; !messaging->RegisterListener(Listener)) {
         return false;
