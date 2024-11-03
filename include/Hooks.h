@@ -23,9 +23,9 @@ namespace Hooks
     public:
         static void Thunk(RE::Actor* target, RE::HitData& hitData);
 
-        inline static REL::Relocation<decltype(Thunk)> func;
+        inline static REL::Relocation<decltype(&Thunk)> func;
 
-        inline static const REL::RelocationID Hook{ 37673, 38627 };
+        inline static const REL::Relocation Hook{ RELOCATION_ID(37673, 38627), REL::VariantOffset(0x3c0, 0x4a8, 0x0) };
 
         inline static const auto address{ Hook.address() };
     };

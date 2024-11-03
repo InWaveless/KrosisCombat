@@ -1,5 +1,8 @@
 #pragma once
 
+#include <mutex>
+#include <unordered_set>
+
 namespace Events
 {
     class EquipEventHandler : public EventSingleton<EquipEventHandler, RE::TESEquipEvent>

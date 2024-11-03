@@ -8,6 +8,8 @@ void Listener(SKSE::MessagingInterface::Message* message) noexcept
     if (message->type == SKSE::MessagingInterface::kDataLoaded) {
         Settings::LoadSettings();
         // Events::EquipEventHandler::Register();
+        //Events::AnimEventHandler::InstallHook();
+
         Hooks::Install();
         logger::info("krosis combat init complete");
     }
